@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+ 
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <PackageId>Puzzel</PackageId>
+    <Product>Puzzel</Product>
+    <Copyright>Copyright © Jakub@Sypek</Copyright>
+    <Authors>Jakub Sypek</Authors>
+    <Company />
+    <ApplicationIcon>..\Forms\Resources\ICO\Puzzel.ico</ApplicationIcon>
+    <Platforms>AnyCPU;x64</Platforms>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <AssemblyName>Puzzel</AssemblyName>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\PuzzelLibrary\PuzzelLibrary.csproj" />
+    <ProjectReference Include="..\Settings\Settings.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Cassia">
+      <HintPath>bin\Debug\net6.0-windows\Cassia.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices.Protocols">
+      <HintPath>bin\Debug\net6.0-windows\System.DirectoryServices.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>bin\Debug\net6.0-windows\System.Management.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Additional\RemotePing_Tracert.cs" />
+    <Compile Update="Additional\RemotePing_Tracert.Designer.cs">
+      <DependentUpon>RemotePing_Tracert.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Additional\RemotePing_Tracert.resx">
+      <DependentUpon>RemotePing_Tracert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="powershell -ExecutionPolicy ByPass -command $(SolutionDir)MakeVersion.ps1" />
+  </Target>
+</Project>

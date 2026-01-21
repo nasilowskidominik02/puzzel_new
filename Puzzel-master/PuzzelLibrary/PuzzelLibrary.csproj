@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <Copyright>Copyright © Jakub@Sypek</Copyright>
+    <Company>Jakub Sypek</Company>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NoWarn>1701;1702</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="LAPS\" />
+    <Folder Include="LogonData\" />
+    <Folder Include="Terminal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cassia">
+      <HintPath>..\Forms\bin\Debug\net6.0-windows\Cassia.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.EventLog">
+      <HintPath>..\Forms\bin\Debug\net6.0-windows\System.Diagnostics.EventLog.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <HintPath>..\Forms\bin\Debug\net6.0-windows\System.DirectoryServices.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement">
+      <HintPath>..\Forms\bin\Debug\net6.0-windows\System.DirectoryServices.AccountManagement.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices.Protocols">
+      <HintPath>..\Forms\bin\Debug\net6.0-windows\System.DirectoryServices.Protocols.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>..\Forms\bin\Debug\net6.0-windows\System.Management.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.3\ref\net6.0\System.Windows.Forms.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.Primitives">
+      <HintPath>C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.3\ref\net6.0\System.Windows.Forms.Primitives.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="powershell -ExecutionPolicy ByPass -command $(SolutionDir)MakeVersion.ps1" />
+  </Target>
+</Project>

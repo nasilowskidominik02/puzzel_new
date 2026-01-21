@@ -1,0 +1,22 @@
+﻿################################################################################
+# Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/
+/Settings/obj
+/Settings/bin
+/PuzzelLibrary/obj
+/PuzzelLibrary/bin/
+/Forms/Obj/
+/PuzzleLibrary
+/Puzzel
+/packages
+/Forms/Bin
+/Changelog.txt
+/bugs.txt
+/concept.txt
+/dhcp.msc
+/Updater/obj
+/Updater/bin
+/UpdaterTest/
+/PuzzelTest

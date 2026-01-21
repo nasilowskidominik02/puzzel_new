@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Additional\Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Additional\RemotePingTracert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Additional\SearchingMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\EventLogCollector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\Explorer\ExplorerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\Explorer\ExplorerFormCustomSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\Explorer\ExplorerFormSendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\LAPSui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\LockoutStatus\LockoutStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\LockoutStatus\LockoutStatusCustom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\LockoutStatus\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\QuickFix\DeleteUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\QuickFix\Environment_Variable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Additional\RemoteShellCustomAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="External\CustomLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
